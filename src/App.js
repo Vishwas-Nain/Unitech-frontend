@@ -20,7 +20,7 @@ import ChangePassword from './pages/ChangePassword';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import { CartProvider } from './context/CartContext';
-import { UserProvider, useUser } from './context/UserContext';
+import { UserProvider } from './context/UserContext';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import ProtectedRoute from './components/ProtectedRoute';
 

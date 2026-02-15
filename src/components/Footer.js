@@ -2,16 +2,11 @@ import React from 'react';
 import {
   Box,
   Container,
-  Grid,
   Typography,
   IconButton,
-  useTheme,
-  Card,
-  CardContent,
   Button,
   Link,
-  Stack,
-  Divider
+  Stack
 } from '@mui/material';
 import {
   Facebook as FacebookIcon,
@@ -23,7 +18,6 @@ import {
 } from '@mui/icons-material';
 
 const Footer = () => {
-  const theme = useTheme();
 
   const footerLinks = {
     'About': [
