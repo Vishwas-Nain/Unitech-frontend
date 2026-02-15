@@ -14,11 +14,8 @@ import {
   Select,
   MenuItem,
   IconButton,
-  Tabs,
-  Tab,
   Paper,
   CardMedia,
-  Skeleton,
   Dialog,
   DialogTitle,
   DialogContent,
@@ -26,35 +23,17 @@ import {
   List,
   ListItem,
   ListItemText,
-  ListItemIcon,
-  Divider,
   InputAdornment,
   styled,
   useTheme,
-  Fade,
-  Accordion,
-  AccordionSummary,
-  AccordionDetails,
-  DialogContentText
+  Fade
 } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import MemoryIcon from '@mui/icons-material/Memory';
-import StorageIcon from '@mui/icons-material/Storage';
-import BatteryFullIcon from '@mui/icons-material/BatteryFull';
-import LocalShippingIcon from '@mui/icons-material/LocalShipping';
-import ReplayIcon from '@mui/icons-material/Replay';
-import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import ShareIcon from '@mui/icons-material/Share';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import LaptopMacIcon from '@mui/icons-material/LaptopMac';
-import DesktopWindowsIcon from '@mui/icons-material/DesktopWindows';
-import DescriptionIcon from '@mui/icons-material/Description';
 import CloseIcon from '@mui/icons-material/Close';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import { Link, useParams, useLocation, useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { formatPrice } from '../utils/currency';
 
@@ -126,19 +105,9 @@ const StyledSpecsList = styled(List)(({ theme }) => ({
   }
 }));
 
-const StyledProductImage = styled(CardMedia)(({ theme }) => ({
-  height: '200px',
-  borderRadius: '12px',
-  objectFit: 'cover',
-  transition: 'transform 0.3s ease',
-  '&:hover': {
-    transform: 'scale(1.05)'
-  }
-}));
 
 const Products = () => {
   const location = useLocation();
-  const navigate = useNavigate();
   const searchParams = new URLSearchParams(location.search);
   const categoryFromQuery = searchParams.get('category') || 'all';
   const searchTermFromQuery = searchParams.get('search') || '';
